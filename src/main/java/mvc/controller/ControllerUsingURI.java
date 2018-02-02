@@ -17,6 +17,8 @@ public class ControllerUsingURI extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
+		System.out.println("시작");
+		
 		// properties 파일을 호출
 		String configFile = getInitParameter("configFile");
 		Properties prop = new Properties();

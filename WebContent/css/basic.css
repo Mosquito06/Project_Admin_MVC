@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+div#HeaderDiv{
+	color: white;
+	background-color: #6799FF;
+	padding: 3px 10px;
+}
+
+div#FooterDiv{
+	color: white;
+	text-align: center;
+	background-color: #6799FF;
+}
+
+div#main{
+	min-height: 730px;
+	
+}

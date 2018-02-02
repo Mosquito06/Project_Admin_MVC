@@ -9,8 +9,9 @@ public class MainHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		
-		return null;
+
+			return "/WEB-INF/view/List.jsp";
+
 	}
 
 }
