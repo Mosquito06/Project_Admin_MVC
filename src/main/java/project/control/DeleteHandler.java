@@ -9,15 +9,21 @@ import mvc.controller.CommandHandler;
 import project.dto.Project;
 import project.service.ProjectDaoService;
 
-public class MainHandler implements CommandHandler {
+public class DeleteHandler implements CommandHandler {
 
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		ProjectDaoService service = ProjectDaoService.getInstance();
-		List<Project> list = service.selectProjectAll();
-		req.setAttribute("ProjectList", list);
+		String num = req.getParameter("no");
+		Project project = new Project();
+		project.setProjectNum(Integer.parseInt(num));
 		
-		return "/WEB-INF/view/List.jsp";
+		ProjectDaoService service = ProjectDaoService.getInstance();
+		service.deleteProject(project);
+		List<Project> list = service.selectProjectAll();
+		
+		req.setAttribute("ProjectList", list);
+		res.sendRedirect("list.do?delteReulst=1");
+		return null;
 
 	}
 

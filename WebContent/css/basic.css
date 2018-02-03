@@ -12,6 +12,6 @@ div#FooterDiv{
 }
 
 div#main{
-	min-height: 730px;
+	min-height: 300px !important;
 	
 }

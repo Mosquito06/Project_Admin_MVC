@@ -27,4 +27,25 @@
         <include refid="selectProjectSql"/>
     </select>
     
+    <insert id="insertProject" parameterType="Project">
+        insert into project(project_name, project_content, project_start, project_end, project_ing) 
+        values(#{projectName}, #{projectContent}, #{projectStart}, #{projectEnd}, #{projectIng})
+    </insert>
+    
+    <select id="selectByNum" parameterType="Project" resultMap="ProjectResult">
+        <include refid="selectProjectSql"/>
+        <include refid="whereSql"/>
+    </select>
+    
+    <update id="updateProject" parameterType="Project">
+          update project set project_name = #{projectName}, project_content = #{projectContent}, 
+          project_start = #{projectStart}, project_end = #{projectEnd}, project_ing = #{projectIng}
+          <include refid="whereSql"/>
+    </update>
+    
+    <delete id="deleteProject" parameterType="Project">
+        delete from project
+        <include refid="whereSql"/>
+    </delete>
+    
 </mapper>

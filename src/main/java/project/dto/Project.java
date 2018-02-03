@@ -14,6 +14,27 @@ public class Project {
 		super();
 	}
 
+	public Project(String projectName, String projectContent, Date projectStart, Date projectEnd,
+			ProjectIng projectIng) {
+		super();
+		this.projectName = projectName;
+		this.projectContent = projectContent;
+		this.projectStart = projectStart;
+		this.projectEnd = projectEnd;
+		this.projectIng = projectIng;
+	}
+
+	public Project(int projectNum, String projectName, String projectContent, Date projectStart, Date projectEnd,
+			ProjectIng projectIng) {
+		super();
+		this.projectNum = projectNum;
+		this.projectName = projectName;
+		this.projectContent = projectContent;
+		this.projectStart = projectStart;
+		this.projectEnd = projectEnd;
+		this.projectIng = projectIng;
+	}
+
 	public int getProjectNum() {
 		return projectNum;
 	}
